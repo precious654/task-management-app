@@ -2,20 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #2f2e2e;
+  background-color: #f7f6f7;
+}
+
+.containeer {
+  inline-size: 90%;
+  block-size: 100vh;
+  margin: auto;
+}
+
+.form-input {
+  @apply p-4 border-2 border-[#7b7a7b] rounded-xl shadow shadow-[#010100] outline-none
 }
