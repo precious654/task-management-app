@@ -22,3 +22,11 @@ body {
 .form-input {
   @apply p-4 border-2 border-[#7b7a7b] rounded-xl shadow shadow-[#010100] outline-none
 }
+
+.sidebar-link {
+  @apply hover:bg-[#f26e56] hover:text-[#fefeff] w-full text-center p-2 font-medium rounded-lg
+}
+
+.sidebar-link-active {
+  @apply text-[#fefeff] bg-[#f26e56] w-full text-center p-2 font-medium rounded-lg
+}

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/Navbar";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -11,7 +13,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "TaskManager",
-  description: "Keep track of your tasks",
+  description: "Keep track of your dashboard",
 };
 
 export default function RootLayout({
@@ -24,8 +26,12 @@ export default function RootLayout({
       <body
         className={`${poppins.className}`}
       >
-        <div className="containeer">
-            {children}
+        <div className="containeer py-3">
+            <div className="flex gap-4">
+                <Sidebar />
+                {children}
+                <Navbar />
+            </div>
         </div>
       </body>
     </html>
