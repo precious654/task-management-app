@@ -28,10 +28,10 @@ export default async function Home() {
 
                 <div className="hidden md:flex items-center gap-3">
                     <button className="flex items-center gap-1 bg-[#f26e56] p-4 rounded-[2rem]">
-                        <Link href="/task" className="p-1 bg-[#FFFFFF] rounded-full">
+                        <Link href="/create/task" className="p-1 bg-[#FFFFFF] rounded-full">
                             <IoMdAdd size={20} className="text-[#f26e56]"/>
                         </Link>
-                        <Link href="/task" className="text-[#FFFFFF]">create task</Link>
+                        <Link href="/create/task" className="text-[#FFFFFF]">create task</Link>
                     </button>
 
                     <Form action="/" className="relative">
@@ -46,6 +46,10 @@ export default async function Home() {
                     </div>
                 </div>
             </header>
+
+            <div>
+                <p>{session.user?.id} This is the user id</p>
+            </div>
             <form
                 action={async () => {
                     "use server";
