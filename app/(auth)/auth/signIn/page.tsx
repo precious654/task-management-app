@@ -20,9 +20,13 @@ const Page = async () => {
                     Please login to continue using our services
                 </p>
             </div>
-            <form action="" className="md:w-6/12 flex flex-col gap-5 w-full">
-                <input type="email" placeholder="Your Email..." className="form-input"/>
-                <input type="password" placeholder="Your Password..." className="form-input"/>
+            <form action={ async (formData: FormData) => {
+                "use server"
+                console.log(formData);
+            }} className="md:w-6/12 flex flex-col gap-5 w-full"
+            >
+                <input type="email" name="email" placeholder="Your Email..." className="form-input"/>
+                <input type="password" name="password" placeholder="Your Password..." className="form-input"/>
                 <button type="submit" className="bg-[#f26f57] text-[#ebeeed] py-3 rounded-lg">Continue</button>
             </form>
             <div className="md:w-6/12 flex items-center gap-2 w-full">

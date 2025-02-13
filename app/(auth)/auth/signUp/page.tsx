@@ -21,9 +21,9 @@ const Page = async () => {
                 </p>
             </div>
             <form action="" className="md:w-6/12 flex flex-col gap-5 w-full">
-                <input type="text" placeholder="Your Name..." className="form-input"/>
-                <input type="email" placeholder="Your Email..." className="form-input"/>
-                <input type="password" placeholder="Your Password..." className="form-input"/>
+                <input type="text" name="name" placeholder="Your Name..." className="form-input"/>
+                <input type="email" name="email" placeholder="Your Email..." className="form-input"/>
+                <input type="password" name="password" placeholder="Your Password..." className="form-input"/>
                 <div className="flex items-center gap-2">
                     <input type="checkbox" id="terms" className="p-1 rounded-lg"/>
                     <label htmlFor="terms" className="text-gray-300 underline">I agree to privacy policy & terms</label>
