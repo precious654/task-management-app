@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link"
 import { FiSearch } from "react-icons/fi";
 
 const Page = () => {
@@ -11,7 +12,7 @@ const Page = () => {
                 <div className="w-full relative">
                     <input type="text" name="assignee" placeholder="assignee" className="form-input w-full"/>
                     <div className="absolute right-4 top-5">
-                        <FiSearch size={20} />
+                        <FiSearch size={20}/>
                     </div>
                 </div>
                 <textarea name="details" id="" cols={30} rows={10} placeholder="Add your task details"
@@ -25,6 +26,7 @@ const Page = () => {
                 <input type="text" name="category" id="" placeholder="Task Category" className="form-input"/>
                 <button type="submit" className="bg-[#f26f57] text-[#ebeeed] py-3 rounded-lg">Create Task</button>
             </form>
+            <Link href="/create/project" className="underline text-[#f3836e]">You can create a project instead</Link>
         </main>
     )
 }

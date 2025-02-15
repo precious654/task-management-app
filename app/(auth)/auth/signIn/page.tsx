@@ -22,7 +22,7 @@ const Page = async () => {
             </div>
             <form action={ async (formData: FormData) => {
                 "use server"
-                console.log(formData);
+                await signIn("credentials", formData);
             }} className="md:w-6/12 flex flex-col gap-5 w-full"
             >
                 <input type="email" name="email" placeholder="Your Email..." className="form-input"/>

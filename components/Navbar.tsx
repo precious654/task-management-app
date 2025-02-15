@@ -25,7 +25,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li className={`${pathname.includes("task") ? "bg-[#f26e56]" : ""} p-2 rounded-full bg-[#f7a696]`}>
-                    <Link href="/" className={`${pathname.includes("task") ? "text-[#f26e56]" : ""}`}>
+                    <Link href="/create/task" className={`${pathname.includes("task") ? "text-[#f26e56]" : ""}`}>
                         <IoMdAdd size={26} className="text-[#FFFFFF]" />
                     </Link>
                 </li>

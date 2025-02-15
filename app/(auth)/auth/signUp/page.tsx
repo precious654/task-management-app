@@ -4,6 +4,7 @@ import {FcGoogle} from "react-icons/fc";
 import {BsFacebook, BsGithub} from "react-icons/bs";
 import {auth, signIn} from "@/auth";
 import {redirect} from "next/navigation";
+import SignUpForm from "@/components/SignUpForm";
 
 const Page = async () => {
     const session = await auth();
@@ -20,16 +21,7 @@ const Page = async () => {
                     Please register on our Streamline, where you can continue using our services
                 </p>
             </div>
-            <form action="" className="md:w-6/12 flex flex-col gap-5 w-full">
-                <input type="text" name="name" placeholder="Your Name..." className="form-input"/>
-                <input type="email" name="email" placeholder="Your Email..." className="form-input"/>
-                <input type="password" name="password" placeholder="Your Password..." className="form-input"/>
-                <div className="flex items-center gap-2">
-                    <input type="checkbox" id="terms" className="p-1 rounded-lg"/>
-                    <label htmlFor="terms" className="text-gray-300 underline">I agree to privacy policy & terms</label>
-                </div>
-                <button type="submit" className="bg-[#f26f57] text-[#ebeeed] py-3 rounded-lg">Continue</button>
-            </form>
+            < SignUpForm />
             <div className="md:w-6/12 flex items-center gap-2 w-full">
                 <p className="w-full h-0.5 bg-gray-300 rounded-lg"></p>
                 <p className="text-gray-300">or</p>

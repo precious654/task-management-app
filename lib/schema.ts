@@ -5,4 +5,10 @@ const userSchema = z.object({
     password: z.string().min(1)
 })
 
-export { userSchema };
+const signUpSchema = z.object({
+    name: z.string(),
+    email: z.string().email(),
+    password: z.string().min(1)
+})
+
+export { userSchema, signUpSchema };
