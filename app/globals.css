@@ -19,6 +19,10 @@ body {
   margin: auto;
 }
 
+.no-scrollbar{
+  scrollbar-width: none;
+}
+
 .form-input {
   @apply p-4 border-2 border-[#7b7a7b] rounded-xl shadow shadow-[#010100] outline-none
 }

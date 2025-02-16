@@ -1,0 +1,84 @@
+[
+  {
+    "id": "1",
+    "name": "Build an app with react native",
+    "description": "This is a project aimed at developing a cross-platform mobile application using React Native. The app will feature a modern UI, seamless navigation, and core functionalities tailored to user needs. The project will cover planning, design, development, testing, and deployment stages to ensure a high-quality, user-friendly experience.",
+    "team": [
+      "Precious",
+      "Victor",
+      "Noble"
+    ],
+    "tasks": [
+      {
+        "title": "Set up React Native environment and dependencies",
+        "status": "pending",
+        "deadline": "2025-03-18"
+      },
+      {
+        "title": "Implement navigation and screen transitions",
+        "status": "pending",
+        "deadline": "2025-03-22"
+      },
+      {
+        "title": "Develop authentication (sign-up/login)",
+        "status": "pending",
+        "deadline": "2025-03-25"
+      },
+      {
+        "title": "Build core features (e.g., API integration, data handling)",
+        "status": "pending",
+        "deadline": "2025-04-01"
+      },
+      {
+        "title": "Implement push notifications and in-app messaging",
+        "status": "pending",
+        "deadline": "2025-04-05"
+      }
+    ],
+    "deadline": "2025-05-01"
+  },
+  {
+    "id": "2",
+    "name": "Build the cosmetic website",
+    "description": "This is a project focused on designing and developing a visually appealing and user-friendly website for a cosmetic brand. The site will showcase products, provide detailed descriptions, and offer seamless navigation for customers. Key features may include an elegant UI, product categorization, customer reviews, and an intuitive checkout process. The goal is to enhance brand visibility, improve user experience, and drive online sales.",
+    "team": [
+      "Precious",
+      "Victor",
+      "David",
+      "Mmili"
+    ],
+    "tasks": [
+      {
+        "title": "Define website goals and target audience",
+        "status": "pending",
+        "deadline": "2025-03-01"
+      },
+      {
+        "title": "Research competitor websites and trends",
+        "status": "pending",
+        "deadline": "2025-03-05"
+      },
+      {
+        "title": "Create a sitemap and wireframes",
+        "status": "pending",
+        "deadline": "2025-03-08"
+      },
+      {
+        "title": "Design homepage UI",
+        "status": "pending",
+        "deadline": "2025-03-12"
+      },
+      {
+        "title": "Design product listing and detail pages",
+        "status": "pending",
+        "deadline": "2025-03-15"
+      },
+      {
+        "title": "Create brand color palette and typography",
+        "status": "pending",
+        "deadline": "2025-03-18"
+      }
+    ],
+    "deadline": "2025-03-22"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id":1,
+    "title": "Design UI mockups",
+    "description": "Create wireframes and high-fidelity designs for the app.",
+    "status": "pending",
+    "assignedTo": "Precious",
+    "project": "Build React native app",
+    "deadline": "2025-02-20"
+  },
+  {
+    "id": 2,
+    "title": "Set up project repository",
+    "description": "Initialize a Git repository and set up version control.",
+    "status": "completed",
+    "assignedTo":  "Victor",
+    "project":  "Build cosmetic web app",
+    "deadline": "2025-02-10"
+  },
+  {
+    "id": 3,
+    "title": "Develop authentication system",
+    "description": "Implement user sign-up, login, and password recovery features.",
+    "status": "ongoing",
+    "assignedTo":  "Precious",
+    "project":  "update Rune.io webapp",
+    "deadline": "2025-02-25"
+  },
+  {
+    "id": 4,
+    "title": "Integrate payment gateway",
+    "description": "Connect a secure payment system for transactions.",
+    "status": "pending",
+    "assignedTo":  "David",
+    "project":  "Build cosmetic web app",
+    "deadline": "2025-03-05"
+  },
+  {
+    "id": 5,
+    "title": "Write project documentation",
+    "description": "Prepare detailed documentation for users and developers.",
+    "status": "completed",
+    "assignedTo":  "David",
+    "project":  "Build React native app",
+    "deadline": "2025-03-10"
+  },
+  {
+    "id": 6,
+    "title": "Optimize website performance",
+    "description": "Enhance speed and efficiency through code optimization.",
+    "status": "ongoing",
+    "assignedTo":  "Victor",
+    "project":  "Build cosmetic web app",
+    "deadline": "2025-03-15"
+  },
+  {
+    "id": 7,
+    "title": "Run security tests",
+    "description": "Conduct penetration testing to identify vulnerabilities.",
+    "status": "pending",
+    "assignedTo":  "David",
+    "project":  "Build cosmetic web app",
+    "deadline": "2025-03-20"
+  },
+  {
+    "id": 8,
+    "title": "Deploy to production",
+    "description": "Launch the final version of the project on live servers.",
+    "status": "pending",
+    "assignedTo":  "Precious",
+    "project":  "Build cosmetic web app",
+    "deadline": "2025-03-25"
+  },
+  {
+    "id": 9,
+    "title": "Gather user feedback",
+    "description": "Collect and analyze feedback for future improvements.",
+    "status": "pending",
+    "assignedTo":  "Victor",
+    "project":  "Build cosmetic web app",
+    "deadline": "2025-03-30"
+  },
+  {
+    "id": 8,
+    "title": "Optimize web app",
+    "description": "Enhance efficiency through testing and optimization.",
+    "status": "ongoing",
+    "assignedTo":  "Victor",
+    "project":  "Build cosmetic web app",
+    "deadline": "2025-03-15"
+  }
+]

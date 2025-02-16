@@ -23,7 +23,6 @@ const Page = () => {
                     <option value="completed">Completed</option>
                     <option value="canceled">Canceled</option>
                 </select>
-                <input type="text" name="category" id="" placeholder="Task Category" className="form-input"/>
                 <button type="submit" className="bg-[#f26f57] text-[#ebeeed] py-3 rounded-lg">Create Task</button>
             </form>
             <Link href="/create/project" className="underline text-[#f3836e]">You can create a project instead</Link>
