@@ -30,7 +30,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/" className={`${pathname.includes("projects") ? "text-[#f26e56]" : ""}`}>
+                    <Link href="/projects" className={`${pathname.includes("projects") ? "text-[#f26e56]" : ""}`}>
                         <MdOutlineTask size={20} />
                     </Link>
                 </li>

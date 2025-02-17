@@ -48,8 +48,10 @@ model Project {
   id          String  @id @default(uuid())
   name        String
   description String?
-  team        Team    @relation(fields: [teamId], references: [id])
-  teamId      String
+  status      String  @default("pending")
+  team        Team?    @relation(fields: [teamId], references: [id])
+  teamId      String?
+  progress    Float     @default(0)
   tasks       Task[]
   deadline   DateTime
 }
