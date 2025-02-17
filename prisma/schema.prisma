@@ -57,11 +57,12 @@ model Project {
 model Task {
   id         String  @id @default(uuid())
   title      String
+  description String
   status     String  @default("pending") // "pending", "in_progress", "completed"
   assignedTo User?   @relation(fields: [userId], references: [id])
   userId     String?
-  project    Project @relation(fields: [projectId], references: [id])
-  projectId  String
+  project    Project? @relation(fields: [projectId], references: [id])
+  projectId  String?
   deadline   DateTime
 }
 

@@ -14,8 +14,6 @@ export default async function Home() {
   const ongoingTasks = tasks.filter(task => task.status === "ongoing");
   const completedTasks = tasks.filter(task => task.status === "completed");
 
-  console.log(completedTasks);
-
   if (!session) {
     redirect("/auth/signIn");
   }
