@@ -3,6 +3,7 @@
     "id": "1",
     "name": "Build an app with react native",
     "description": "This is a project aimed at developing a cross-platform mobile application using React Native. The app will feature a modern UI, seamless navigation, and core functionalities tailored to user needs. The project will cover planning, design, development, testing, and deployment stages to ensure a high-quality, user-friendly experience.",
+    "status": "pending",
     "team": [
       "Precious",
       "Victor",
@@ -35,12 +36,14 @@
         "deadline": "2025-04-05"
       }
     ],
+    "progress": 0,
     "deadline": "2025-05-01"
   },
   {
     "id": "2",
     "name": "Build the cosmetic website",
     "description": "This is a project focused on designing and developing a visually appealing and user-friendly website for a cosmetic brand. The site will showcase products, provide detailed descriptions, and offer seamless navigation for customers. Key features may include an elegant UI, product categorization, customer reviews, and an intuitive checkout process. The goal is to enhance brand visibility, improve user experience, and drive online sales.",
+    "status": "ongoing",
     "team": [
       "Precious",
       "Victor",
@@ -50,17 +53,17 @@
     "tasks": [
       {
         "title": "Define website goals and target audience",
-        "status": "pending",
+        "status": "completed",
         "deadline": "2025-03-01"
       },
       {
         "title": "Research competitor websites and trends",
-        "status": "pending",
+        "status": "completed",
         "deadline": "2025-03-05"
       },
       {
         "title": "Create a sitemap and wireframes",
-        "status": "pending",
+        "status": "completed",
         "deadline": "2025-03-08"
       },
       {
@@ -79,6 +82,283 @@
         "deadline": "2025-03-18"
       }
     ],
+    "progress": 60,
+    "deadline": "2025-03-22"
+  },
+  {
+    "id": "3",
+    "name": "Build the cosmetic website",
+    "description": "This is a project focused on designing and developing a visually appealing and user-friendly website for a cosmetic brand. The site will showcase products, provide detailed descriptions, and offer seamless navigation for customers. Key features may include an elegant UI, product categorization, customer reviews, and an intuitive checkout process. The goal is to enhance brand visibility, improve user experience, and drive online sales.",
+    "status": "ongoing",
+    "team": [
+      "Precious",
+      "Victor",
+      "David",
+      "Mmili"
+    ],
+    "tasks": [
+      {
+        "title": "Define website goals and target audience",
+        "status": "completed",
+        "deadline": "2025-03-01"
+      },
+      {
+        "title": "Research competitor websites and trends",
+        "status": "completed",
+        "deadline": "2025-03-05"
+      },
+      {
+        "title": "Create a sitemap and wireframes",
+        "status": "completed",
+        "deadline": "2025-03-08"
+      },
+      {
+        "title": "Design homepage UI",
+        "status": "pending",
+        "deadline": "2025-03-12"
+      },
+      {
+        "title": "Design product listing and detail pages",
+        "status": "pending",
+        "deadline": "2025-03-15"
+      },
+      {
+        "title": "Create brand color palette and typography",
+        "status": "pending",
+        "deadline": "2025-03-18"
+      }
+    ],
+    "progress": 60,
+    "deadline": "2025-03-22"
+  },
+  {
+    "id": "4",
+    "name": "Build the cosmetic website",
+    "description": "This is a project focused on designing and developing a visually appealing and user-friendly website for a cosmetic brand. The site will showcase products, provide detailed descriptions, and offer seamless navigation for customers. Key features may include an elegant UI, product categorization, customer reviews, and an intuitive checkout process. The goal is to enhance brand visibility, improve user experience, and drive online sales.",
+    "status": "ongoing",
+    "team": [
+      "Precious",
+      "Victor",
+      "David",
+      "Mmili"
+    ],
+    "tasks": [
+      {
+        "title": "Define website goals and target audience",
+        "status": "completed",
+        "deadline": "2025-03-01"
+      },
+      {
+        "title": "Research competitor websites and trends",
+        "status": "completed",
+        "deadline": "2025-03-05"
+      },
+      {
+        "title": "Create a sitemap and wireframes",
+        "status": "completed",
+        "deadline": "2025-03-08"
+      },
+      {
+        "title": "Design homepage UI",
+        "status": "pending",
+        "deadline": "2025-03-12"
+      },
+      {
+        "title": "Design product listing and detail pages",
+        "status": "pending",
+        "deadline": "2025-03-15"
+      },
+      {
+        "title": "Create brand color palette and typography",
+        "status": "pending",
+        "deadline": "2025-03-18"
+      }
+    ],
+    "progress": 60,
+    "deadline": "2025-03-22"
+  },
+  {
+    "id": "5",
+    "name": "Build the cosmetic website",
+    "description": "This is a project focused on designing and developing a visually appealing and user-friendly website for a cosmetic brand. The site will showcase products, provide detailed descriptions, and offer seamless navigation for customers. Key features may include an elegant UI, product categorization, customer reviews, and an intuitive checkout process. The goal is to enhance brand visibility, improve user experience, and drive online sales.",
+    "status": "ongoing",
+    "team": [
+      "Precious",
+      "Victor",
+      "David",
+      "Mmili"
+    ],
+    "tasks": [
+      {
+        "title": "Define website goals and target audience",
+        "status": "completed",
+        "deadline": "2025-03-01"
+      },
+      {
+        "title": "Research competitor websites and trends",
+        "status": "completed",
+        "deadline": "2025-03-05"
+      },
+      {
+        "title": "Create a sitemap and wireframes",
+        "status": "completed",
+        "deadline": "2025-03-08"
+      },
+      {
+        "title": "Design homepage UI",
+        "status": "pending",
+        "deadline": "2025-03-12"
+      },
+      {
+        "title": "Design product listing and detail pages",
+        "status": "pending",
+        "deadline": "2025-03-15"
+      },
+      {
+        "title": "Create brand color palette and typography",
+        "status": "pending",
+        "deadline": "2025-03-18"
+      }
+    ],
+    "progress": 60,
+    "deadline": "2025-03-22"
+  },
+  {
+    "id": "6",
+    "name": "Build the cosmetic website",
+    "description": "This is a project focused on designing and developing a visually appealing and user-friendly website for a cosmetic brand. The site will showcase products, provide detailed descriptions, and offer seamless navigation for customers. Key features may include an elegant UI, product categorization, customer reviews, and an intuitive checkout process. The goal is to enhance brand visibility, improve user experience, and drive online sales.",
+    "status": "ongoing",
+    "team": [
+      "Precious",
+      "Victor",
+      "David",
+      "Mmili"
+    ],
+    "tasks": [
+      {
+        "title": "Define website goals and target audience",
+        "status": "completed",
+        "deadline": "2025-03-01"
+      },
+      {
+        "title": "Research competitor websites and trends",
+        "status": "completed",
+        "deadline": "2025-03-05"
+      },
+      {
+        "title": "Create a sitemap and wireframes",
+        "status": "completed",
+        "deadline": "2025-03-08"
+      },
+      {
+        "title": "Design homepage UI",
+        "status": "pending",
+        "deadline": "2025-03-12"
+      },
+      {
+        "title": "Design product listing and detail pages",
+        "status": "pending",
+        "deadline": "2025-03-15"
+      },
+      {
+        "title": "Create brand color palette and typography",
+        "status": "pending",
+        "deadline": "2025-03-18"
+      }
+    ],
+    "progress": 60,
+    "deadline": "2025-03-22"
+  },
+  {
+    "id": "7",
+    "name": "Build the cosmetic website",
+    "description": "This is a project focused on designing and developing a visually appealing and user-friendly website for a cosmetic brand. The site will showcase products, provide detailed descriptions, and offer seamless navigation for customers. Key features may include an elegant UI, product categorization, customer reviews, and an intuitive checkout process. The goal is to enhance brand visibility, improve user experience, and drive online sales.",
+    "status": "ongoing",
+    "team": [
+      "Precious",
+      "Victor",
+      "David",
+      "Mmili"
+    ],
+    "tasks": [
+      {
+        "title": "Define website goals and target audience",
+        "status": "completed",
+        "deadline": "2025-03-01"
+      },
+      {
+        "title": "Research competitor websites and trends",
+        "status": "completed",
+        "deadline": "2025-03-05"
+      },
+      {
+        "title": "Create a sitemap and wireframes",
+        "status": "completed",
+        "deadline": "2025-03-08"
+      },
+      {
+        "title": "Design homepage UI",
+        "status": "pending",
+        "deadline": "2025-03-12"
+      },
+      {
+        "title": "Design product listing and detail pages",
+        "status": "pending",
+        "deadline": "2025-03-15"
+      },
+      {
+        "title": "Create brand color palette and typography",
+        "status": "pending",
+        "deadline": "2025-03-18"
+      }
+    ],
+    "progress": 60,
+    "deadline": "2025-03-22"
+  },
+  {
+    "id": "8",
+    "name": "Build the cosmetic website",
+    "description": "This is a project focused on designing and developing a visually appealing and user-friendly website for a cosmetic brand. The site will showcase products, provide detailed descriptions, and offer seamless navigation for customers. Key features may include an elegant UI, product categorization, customer reviews, and an intuitive checkout process. The goal is to enhance brand visibility, improve user experience, and drive online sales.",
+    "status": "ongoing",
+    "team": [
+      "Precious",
+      "Victor",
+      "David",
+      "Mmili"
+    ],
+    "tasks": [
+      {
+        "title": "Define website goals and target audience",
+        "status": "completed",
+        "deadline": "2025-03-01"
+      },
+      {
+        "title": "Research competitor websites and trends",
+        "status": "completed",
+        "deadline": "2025-03-05"
+      },
+      {
+        "title": "Create a sitemap and wireframes",
+        "status": "completed",
+        "deadline": "2025-03-08"
+      },
+      {
+        "title": "Design homepage UI",
+        "status": "pending",
+        "deadline": "2025-03-12"
+      },
+      {
+        "title": "Design product listing and detail pages",
+        "status": "pending",
+        "deadline": "2025-03-15"
+      },
+      {
+        "title": "Create brand color palette and typography",
+        "status": "pending",
+        "deadline": "2025-03-18"
+      }
+    ],
+    "progress": 60,
     "deadline": "2025-03-22"
   }
 ]

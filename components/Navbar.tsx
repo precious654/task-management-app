@@ -12,7 +12,7 @@ const Navbar = () => {
     const pathname = usePathname();
 
     return (
-        <nav className="p-3 bg-[#fefeff] text-[#f7a696] w-full rounded-lg fixed bottom-1 md:hidden">
+        <nav className="p-3 bg-[#fefeff] text-[#f7a696] w-full rounded-lg md:hidden">
             <ul className="flex items-center w-full justify-between">
                 <li>
                     <Link href="/" className={`${pathname === "/" ? "text-[#f26e56]" : ""}`}>

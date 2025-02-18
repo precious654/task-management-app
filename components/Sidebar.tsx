@@ -8,7 +8,7 @@ const Sidebar = () => {
     const pathName = usePathname();
 
     return (
-        <nav className="p-2 bg-[#fefeff] text-[#f26e56] md:flex flex-col rounded-lg justify-between h-full hidden">
+        <nav className="w-2/12 p-2 bg-[#fefeff] text-[#f26e56] md:flex flex-col rounded-lg justify-between h-full hidden">
             <div className="flex flex-col gap-5">
                 <Link href="/" className="text-2xl text-center font-semibold">Taskio</Link>
                 <ul className="flex flex-col gap-3">
