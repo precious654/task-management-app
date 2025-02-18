@@ -28,6 +28,7 @@ async function addProject(formData: FormData): Promise<ProjectResult> {
     }
 
     const date = new Date(deadline.toString());
+    const actualDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
     const projectStatus = status?.toString();
 
     try {
@@ -36,7 +37,7 @@ async function addProject(formData: FormData): Promise<ProjectResult> {
                 name: name.toString(),
                 description: description.toString(),
                 status: projectStatus,
-                deadline: date,
+                deadline: actualDate,
             }
         });
         revalidatePath("/create/project");

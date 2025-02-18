@@ -81,7 +81,7 @@ export default async function Home() {
           <p className="md:text-lg text-sm font-medium">
             {today.toLocaleString("en-US", { month: "long" })}
           </p>
-          <p className="text-gray-500">
+          <p className="text-gray-500 font-medium">
             Today is{" "}
             <span>
               {today.toLocaleString("en-US", { weekday: "long" })},{" "}
@@ -90,8 +90,7 @@ export default async function Home() {
           </p>
         </div>
         <p className="w-1 hidden md:block rounded-xl h-14 bg-[#eeeeef]"></p>
-        <div className="hidden md:flex gap-20">
-          <p className="font-medium text-lg">Board -</p>
+        <div className="hidden md:block">
           <p className="font-medium text-gray-500">Your Daily Tasks</p>
         </div>
         <p className="w-1 hidden md:block rounded-xl h-14 bg-[#eeeeef]"></p>

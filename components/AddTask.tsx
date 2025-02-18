@@ -16,6 +16,7 @@ const AddTask = () => {
       toast.error(error);
     } else {
       toast.success("Task added successfully.");
+      console.log(data);
     }
   };
 
@@ -33,7 +34,7 @@ const AddTask = () => {
           className="form-input"
         />
         <input
-          type="date"
+          type="datetime-local"
           name="deadline"
           placeholder="Date"
           className="form-input"

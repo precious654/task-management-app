@@ -34,3 +34,25 @@ body {
 .sidebar-link-active {
   @apply text-[#fefeff] bg-[#f26e56] w-full text-center p-2 font-medium rounded-lg
 }
+
+.react-calendar {
+  width: 100%;
+  height: inherit;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #4a5568;
+  text-align: center;
+  font-size: 19px;
+}
+
+.react-calendar__tile {
+  text-align: center;
+  padding: 2.8rem;
+  transition: 0.2s ease-in-out;
+  border: 1px blue solid;
+}

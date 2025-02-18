@@ -46,6 +46,7 @@ async function addTask(formData: FormData): Promise<TaskResult> {
     }
 
     const date = new Date(deadline.toString());
+    const actualTime = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
     const taskStatus = status?.toString();
 
     try {
@@ -55,7 +56,7 @@ async function addTask(formData: FormData): Promise<TaskResult> {
                 description: description.toString(),
                 status: taskStatus,
                 userId,
-                deadline: date,
+                deadline: actualTime,
             }
         })
         revalidatePath("/create/task")

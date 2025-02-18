@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "../globals.css";
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
+// import 'react-calendar/dist/Calendar.css';
 
 const poppins = Poppins({
     subsets: ["latin"],

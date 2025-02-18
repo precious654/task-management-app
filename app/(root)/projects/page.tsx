@@ -139,17 +139,17 @@ const Page = async () => {
                               className="p-2 border-2 border-[#a4a4a4] shadow-md shadow-[#010100] rounded-lg flex items-center justify-between"
                           >
                               <div className="flex flex-col gap-1">
-                                  <Link href={`/projects/item.id`} className="font-medium">
+                                  <Link href={`/projects/${item.id}`} className="font-medium">
                                       {item.name}
                                   </Link>
                                   <Link
-                                      href={`/projects/item.id`}
+                                      href={`/projects/${item.id}`}
                                       className="flex items-center gap-1 font-semibold text-sm"
                                   >
                                       <IoMdCheckmarkCircleOutline size={20}/>
                                       <p>{item.tasks.length} tasks</p>
                                   </Link>
-                                  <Link href={`/projects/item.id`} className="text-sm">
+                                  <Link href={`/projects/${item.id}`} className="text-sm">
                                       Team
                                   </Link>
                                   <div className="flex items-center">

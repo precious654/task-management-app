@@ -20,7 +20,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/" className={`${pathname.includes("calendar") ? "text-[#f26e56]" : ""}`}>
+                    <Link href="/calendar" className={`${pathname.includes("calendar") ? "text-[#f26e56]" : ""}`}>
                         <IoCalendarClearOutline size={20} />
                     </Link>
                 </li>

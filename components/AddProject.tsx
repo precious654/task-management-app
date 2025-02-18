@@ -29,7 +29,7 @@ const AddProject = () => {
           className="form-input"
         />
         <input
-          type="date"
+          type="datetime-local"
           name="deadline"
           placeholder="Deadline..."
           className="form-input"
