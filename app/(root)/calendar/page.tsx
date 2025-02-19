@@ -3,7 +3,7 @@ import CalendarComponent from "@/components/CalendarComponent";
 
 const Page = () => {
     return (
-        <div className="w-full md:h-full border-red-500 border-2">
+        <div className="w-full md:h-full">
             <CalendarComponent />
         </div>
     )

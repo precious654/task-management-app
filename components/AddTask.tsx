@@ -5,6 +5,7 @@ import { FiSearch } from "react-icons/fi";
 import Link from "next/link";
 import addTask from "@/actions/addTask";
 import {toast} from "react-toastify";
+import {IoHomeOutline} from "react-icons/io5";
 // import { useQueryState } from "nuqs";
 
 const AddTask = () => {
@@ -22,19 +23,24 @@ const AddTask = () => {
 
   return (
     <main className="flex flex-col gap-5 items-center justify-center w-full py-6">
-      <p className="text-3xl font-semibold md:w-6/12 w-full">New Tasks</p>
+      <div className="flex items-center justify-between md:w-6/12 w-full">
+        <p className="text-3xl font-semibold">New Task</p>
+        <Link href="/" className="p-2.5 bg-[#e1e9ef] rounded-lg">
+          <IoHomeOutline size={20}/>
+        </Link>
+      </div>
       <form
-        action={clientAction}
-        className="md:w-6/12 w-full flex flex-col gap-4"
+          action={clientAction}
+          className="md:w-6/12 w-full flex flex-col gap-4"
       >
         <input
-          type="text"
-          name="title"
-          placeholder="Task Title"
-          className="form-input"
+            type="text"
+            name="title"
+            placeholder="Task Title"
+            className="form-input"
         />
         <input
-          type="datetime-local"
+            type="datetime-local"
           name="deadline"
           placeholder="Date"
           className="form-input"
