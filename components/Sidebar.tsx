@@ -15,8 +15,8 @@ const Sidebar = () => {
                     <li className={`${pathName == "/" ? "sidebar-link-active": "sidebar-link"}`}>
                         <Link href="/">Dashboard</Link>
                     </li>
-                    <li className={`${pathName.includes("dashboard") ? "sidebar-link-active": "sidebar-link"}`}>
-                        <Link href="/">Tasks</Link>
+                    <li className={`${pathName.includes("tasks") ? "sidebar-link-active": "sidebar-link"}`}>
+                        <Link href="/tasks">Tasks</Link>
                     </li>
                     <li className={`${pathName.includes("calendar") ? "sidebar-link-active": "sidebar-link"}`}>
                         <Link href="/calendar">Calendar</Link>

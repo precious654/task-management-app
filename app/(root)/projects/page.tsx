@@ -138,7 +138,7 @@ const Page = async () => {
                               key={item.id}
                               className="p-2 border-2 border-[#a4a4a4] shadow-md shadow-[#010100] rounded-lg flex items-center justify-between"
                           >
-                              <div className="flex flex-col gap-1">
+                              <div className="flex flex-col gap-2">
                                   <Link href={`/projects/${item.id}`} className="font-medium">
                                       {item.name}
                                   </Link>

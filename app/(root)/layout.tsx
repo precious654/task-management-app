@@ -14,7 +14,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "TaskManager",
-  description: "Keep track of your dashboard",
+  description: "Keep track of your tasks",
 };
 
 export default function RootLayout({
