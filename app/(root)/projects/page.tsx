@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoMdAdd, IoMdCheckmarkCircleOutline } from "react-icons/io";
 import Form from "next/form";
-import { IoNotificationsOutline, IoSearchOutline } from "react-icons/io5";
+import { IoSearchOutline } from "react-icons/io5";
 import { TfiReload } from "react-icons/tfi";
 import { GoClock } from "react-icons/go";
 import { MdTaskAlt } from "react-icons/md";
@@ -14,13 +14,17 @@ import image from "@/public/assets/54b19ada-d53e-4ee9-8882-9dfed1bf1396.jpg";
 import image2 from "@/public/assets/portrait-man-cartoon-style1.jpg";
 import image3 from "@/public/assets/portrait-man-cartoon-style.jpg";
 import ProgressCircle from "@/components/ProgressCircle";
+import {redirect} from "next/navigation";
 
 const Page = async () => {
   const session = await auth();
   const ongoingProjects = projects.filter((item) => item.status === "ongoing");
   const pendingProjects = projects.filter((item) => item.status === "pending");
-
   const images = [image, image2, image3];
+
+  if (!session) {
+    redirect("/auth/signIn");
+  }
 
   return (
       <main className="w-full md:h-full md:overflow-y-clip no-scrollbar pb-5 md:pb-0">

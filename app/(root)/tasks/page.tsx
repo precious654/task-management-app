@@ -6,9 +6,14 @@ import {IoMdAdd} from "react-icons/io";
 import Form from "next/form";
 import {IoSearchOutline} from "react-icons/io5";
 import tasks from "@/data/tasks.json";
+import {redirect} from "next/navigation";
 
 const Page = async () => {
     const session = await auth();
+
+    if (!session) {
+        redirect("/auth/signIn");
+    }
 
     return (
         <main className="w-full md:h-full md:overflow-y-clip no-scrollbar pb-5 md:pb-0">

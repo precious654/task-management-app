@@ -5,8 +5,10 @@ import Link from "next/link";
 import Form from "next/form";
 import { IoMdAdd } from "react-icons/io";
 import { IoSearchOutline } from "react-icons/io5";
+import { CiLogout } from "react-icons/ci";
 import tasks from "@/data/tasks.json";
 import ProgressBar from "@/components/ProgressBar";
+import React from "react";
 
 export default async function Home() {
   const session = await auth();
@@ -32,54 +34,51 @@ export default async function Home() {
           />
           <div className="flex flex-col gap-1">
             {session && (
-              <p className="md:text-2xl text-xl font-medium">
+              <p className="md:text-2xl text-lg font-medium">
                 Hi, {session.user?.name} &#128075;
               </p>
             )}
-            <p className="text-gray-500">Your daily adventure starts now</p>
+            <p className="text-gray-500 text-xs md:text-md">Your daily adventure starts now</p>
           </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
-          <button className="flex items-center gap-1 bg-[#f26e56] p-4 rounded-[2rem]">
+        <div className="md:flex items-center gap-3">
+          <button className="hidden md:flex items-center gap-1 bg-[#f26e56] p-4 rounded-[2rem]">
             <Link href="/create/task" className="p-1 bg-[#FFFFFF] rounded-full">
-              <IoMdAdd size={20} className="text-[#f26e56]" />
+              <IoMdAdd size={20} className="text-[#f26e56]"/>
             </Link>
             <Link href="/create/task" className="text-[#FFFFFF] text-sm lg:text-md">
               create task
             </Link>
           </button>
 
-          <Form action="/" className="relative">
+          <Form action="/" className="relative hidden md:block">
             <input
-              type="text"
-              defaultValue=""
-              name="query"
-              placeholder="Search tasks..."
-              className="p-4 w-full rounded-xl outline-none bg-[#e1e9ef]"
+                type="text"
+                defaultValue=""
+                name="query"
+                placeholder="Search tasks..."
+                className="p-4 w-full rounded-xl outline-none bg-[#e1e9ef]"
             />
             <button className="p-2 bg-[#ecf0f7] rounded-full absolute right-2 top-2">
-              <IoSearchOutline size={20} />
+              <IoSearchOutline size={20}/>
             </button>
           </Form>
+
+          <form action={async () => {
+            "use server";
+            await signOut();
+          }} className="md:hidden">
+            <button className="p-2 text-[#FFFFFF] bg-[#f26e56] rounded-lg">
+              Log out
+            </button>
+          </form>
         </div>
       </header>
-      {/*<form action={async () => {*/}
-      {/*    "use server";*/}
-      {/*    await signOut();*/}
-      {/*  }}>*/}
-      {/*  <button*/}
-      {/*    type="submit"*/}
-      {/*    className="py-1.5 px-4 rounded-xl bg-red-400 text-[#FFFFFF]"*/}
-      {/*  >*/}
-      {/*    Log out*/}
-      {/*  </button>*/}
-      {/*</form>*/}
-
       <div className="mt-10 flex justify-between md:items-center p-2 rounded-lg md:border-2 border-[#eeeeef]">
         <div className="flex flex-col gap-1 md:text-sm text-xs">
           <p className="md:text-lg text-sm font-medium">
-            {today.toLocaleString("en-US", { month: "long" })}
+            {today.toLocaleString("en-US", {month: "long" })}
           </p>
           <p className="text-gray-500 font-medium">
             Today is{" "}

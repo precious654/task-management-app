@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { GoHome } from "react-icons/go";
-import { IoCalendarClearOutline, IoPersonOutline } from "react-icons/io5";
+import { IoCalendarClearOutline } from "react-icons/io5";
+import { LuListTodo } from "react-icons/lu";
 import { IoMdAdd } from "react-icons/io";
 import { MdOutlineTask } from "react-icons/md";
 import Link from "next/link";
@@ -35,8 +36,8 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/" className={`${pathname.includes("profile") ? "text-[#f26e56]" : ""}`}>
-                        <IoPersonOutline size={20} />
+                    <Link href="/tasks" className={`${pathname.includes("tasks") ? "text-[#f26e56]" : ""}`}>
+                        <LuListTodo size={20} />
                     </Link>
                 </li>
             </ul>
