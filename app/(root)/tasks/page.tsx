@@ -7,13 +7,25 @@ import Form from "next/form";
 import {IoSearchOutline} from "react-icons/io5";
 import tasks from "@/data/tasks.json";
 import {redirect} from "next/navigation";
+import getTasks from "@/actions/getTasks";
+import Task from "@/components/Task"
 
 const Page = async () => {
     const session = await auth();
+    const {data, error} = await getTasks();
+    if(data) {
+        console.log(data);
+    } else {
+        console.log(error)
+    }
 
     if (!session) {
         redirect("/auth/signIn");
     }
+
+    const ongoingTasks = data?.filter((task) => task.status === "ongoing");
+    const pendingTasks = data?.filter((task) => task.status === "pending");
+    const completedTasks = data?.filter((task) => task.status === "completed");
 
     return (
         <main className="w-full md:h-full md:overflow-y-clip no-scrollbar pb-5 md:pb-0">
@@ -65,19 +77,19 @@ const Page = async () => {
             </header>
             <div className="md:flex md:items-center md:justify-between grid grid-cols-2 gap-4 mt-10">
                 <div className="flex flex-col gap-1 py-3 px-6 bg-[#f6c69c] rounded-lg md:text-lg text-sm">
-                    <p className="text-3xl font-medium">64</p>
+                    <p className="text-3xl font-medium">{data?.length}</p>
                     <p>Total tasks</p>
                 </div>
                 <div className="flex flex-col gap-1 py-3 px-6 bg-[#f6c69c] rounded-lg md:text-lg text-sm">
-                    <p className="text-3xl font-medium">14</p>
+                    <p className="text-3xl font-medium">{ongoingTasks?.length}</p>
                     <p>Ongoing tasks</p>
                 </div>
                 <div className="flex flex-col gap-1 py-3 px-6 bg-[#f6c69c] rounded-lg md:text-lg text-sm">
-                    <p className="text-3xl font-medium">30</p>
+                    <p className="text-3xl font-medium">{pendingTasks?.length}</p>
                     <p>Pending tasks</p>
                 </div>
                 <div className="flex flex-col gap-1 py-3 px-6 bg-[#f6c69c] rounded-lg md:text-lg text-sm">
-                    <p className="text-3xl font-medium">20</p>
+                    <p className="text-3xl font-medium">{completedTasks?.length}</p>
                     <p>Completed tasks</p>
                 </div>
             </div>
@@ -85,23 +97,11 @@ const Page = async () => {
             <div className="mt-5 no-scrollbar md:h-[55%] overflow-y-auto">
                 <div className="md:grid grid-cols-3 gap-5 flex flex-col">
                     {
-                        tasks.map((task) => {
+                        data?.map((task) => {
                             return (
                                 <div key={task.id}
                                      className="flex flex-col gap-2 bg-[#FFFFFF] p-2 rounded-lg border-[#626363] border-2 shadow-md">
-                                    <p className="bg-[#55c3c5] rounded-2xl py-1 text-[#FFFFFF] text-xs text-center w-2/4">{task.project.name}</p>
-                                    <div className="flex justify-between items-center">
-                                        <div className="flex items-center gap-2">
-                                            <Image src={session?.user?.image ?? ""} alt={session?.user?.name ?? ""}
-                                                   width={35} height={35} className="rounded-full"/>
-                                            <div>
-                                                <p className="font-medium">{task.title}</p>
-                                            </div>
-                                        </div>
-                                        <form action="">
-                                            <input type="checkbox" name="status"/>
-                                        </form>
-                                    </div>
+                                    <Task task={task} />
                                 </div>
                             )
                         })
