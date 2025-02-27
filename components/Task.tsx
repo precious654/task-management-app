@@ -2,7 +2,6 @@
 
 import React from 'react'
 import {BsThreeDotsVertical} from "react-icons/bs";
-import { db } from "@/lib/db"
 import Image from "next/image";
 import updateTaskStatus from "@/actions/updateTaskStatus";
 
@@ -30,7 +29,7 @@ const Task = ({task}) => {
                         <p className="font-medium">{task.title}</p>
                     </div>
                 </div>
-                <input type="checkbox" defaultChecked={task.status === "completed"} name="status" onChange={handleStatusChange} />
+                <input type="checkbox" defaultChecked={task.status === "completed"} name="status" />
             </div>
         </>
     )

@@ -28,7 +28,7 @@ export default function RootLayout({
         className={`${poppins.className}`}
       >
           <div className="containeer py-3">
-              <div className="md:flex gap-4 h-full">
+              <div className="lg:flex gap-4 h-full">
                   <Sidebar/>
                   {children}
                   <Navbar />

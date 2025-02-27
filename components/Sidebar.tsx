@@ -6,7 +6,7 @@ import SidebarLinks from "@/components/SidebarLinks";
 const Sidebar = () => {
     return (
         <nav
-            className="w-2/12 p-2 bg-[#fefeff] text-[#f26e56] md:flex flex-col rounded-lg justify-between h-full hidden">
+            className="w-2/12 p-2 bg-[#fefeff] text-[#f26e56] lg:flex flex-col rounded-lg justify-between h-full hidden">
             <SidebarLinks />
             <form action={async () => {
                 "use server";

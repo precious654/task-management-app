@@ -25,22 +25,22 @@ const Page = async ({params}: { params: Promise<{ projectId: string }> }) => {
     }
 
     return (
-        <main className="w-full md:h-full md:overflow-y-clip no-scrollbar pb-5 md:pb-0">
+        <main className="w-full lg:h-full lg:overflow-y-clip no-scrollbar pb-5 lg:pb-0">
             {
                 project.map( item => {
                     return (
-                        <div key={item.id} className="md:h-full">
-                            <p className="md:text-3xl text-2xl font-medium">{item.name}</p>
-                            <div className="mt-10 hidden md:grid grid-cols-2 gap-28 gap-y-7 w-10/12">
+                        <div key={item.id} className="lg:h-full">
+                            <p className="lg:text-3xl text-2xl font-medium">{item.name}</p>
+                            <div className="mt-10 hidden lg:grid grid-cols-2 gap-28 gap-y-7 w-10/12">
                                 <div className="flex items-center gap-28">
                                     <div className="flex items-center gap-1">
                                         <VscTarget size={25}/>
                                         <p>Status</p>
                                     </div>
                                     <div className="flex items-center gap-1">
-                                        <p className={`${item.status === "ongoing" ? "bg-[#5694f2]" : item.status === "pending" ? "bg-[#ffc247]" : item.status === "completed" ? "bg-[#53c2c5]" : "bg-[#53c2c5]"} p-1 text-sm rounded-md text-[#FFFFFF]`}>{item.status}</p>
+                                        <p className={`${item.status === "ongoing" ? "bg-[#5694f2]" : item.status === "pending" ? "bg-[#ffc247]" : item.status === "completed" ? "bg-[#53c2c5]" : "bg-[#53c2c5]"} p-1 text-sm rounded-lg text-[#FFFFFF]`}>{item.status}</p>
                                         <div
-                                            className={`${item.status === "ongoing" ? "bg-[#5694f2]" : item.status === "pending" ? "bg-[#ffc247]" : item.status === "completed" ? "bg-[#53c2c5]" : "bg-[#53c2c5]"} p-1 rounded-md text-[#FFFFFF]`}>
+                                            className={`${item.status === "ongoing" ? "bg-[#5694f2]" : item.status === "pending" ? "bg-[#ffc247]" : item.status === "completed" ? "bg-[#53c2c5]" : "bg-[#53c2c5]"} p-1 rounded-lg text-[#FFFFFF]`}>
                                             <FaPlay size={18}/>
                                         </div>
                                     </div>
@@ -84,11 +84,11 @@ const Page = async ({params}: { params: Promise<{ projectId: string }> }) => {
                                     <ProgressBar progress={item.progress} />
                                 </div>
                             </div>
-                            <div className="md:mt-10 mt-5 md:w-10/12 md:rounded-lg md:p-4 md:bg-gray-200 flex flex-col md:gap-6 gap-3">
+                            <div className="lg:mt-10 mt-5 lg:w-10/12 lg:rounded-lg lg:p-4 lg:bg-gray-200 flex flex-col lg:gap-6 gap-3">
                                 <p className="font-medium text-xl">Objective</p>
                                 <p className="text-sm text-gray-500 font-medium leading-7">{item.description}</p>
                             </div>
-                            <div  className="md:hidden flex items-center justify-between mt-5">
+                            <div  className="lg:hidden flex items-center justify-between mt-5">
                                 <div className="flex flex-col gap-2.5">
                                     <div
                                         className="flex items-center gap-2 text-sm font-medium bg-[#edeced] p-2 rounded-lg">
@@ -123,11 +123,11 @@ const Page = async ({params}: { params: Promise<{ projectId: string }> }) => {
                                 <ProgressCircle progress={item.progress}/>
                             </div>
                             <p className="mt-8 text-2xl font-medium">Tasks</p>
-                            <div className="h-[26%] overflow-y-auto no-scrollbar sm:mt-5 md:mt-1 rounded-md">
-                                <div className="md:grid grid-cols-3 gap-5 flex flex-col">
+                            <div className="h-[26%] overflow-y-auto no-scrollbar sm:mt-5 lg:mt-1 rounded-lg">
+                                <div className="lg:grid grid-cols-3 gap-5 flex flex-col">
                                     {item.tasks.map((task, index) => {
                                         return (
-                                            <div key={index} className="flex justify-between items-center p-2 bg-[#FFFFFF] rounded-lg border-[#626363] border-2 shadow-md">
+                                            <div key={index} className="flex justify-between items-center p-2 bg-[#FFFFFF] rounded-lg border-[#626363] border-2 shadow-lg">
                                                 <div className="flex items-center gap-2">
                                                     <Image src={image} alt="profile" width={35} height={35}
                                                            className="rounded-full"/>

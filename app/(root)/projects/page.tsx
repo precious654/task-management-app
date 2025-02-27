@@ -27,7 +27,7 @@ const Page = async () => {
   }
 
   return (
-      <main className="w-full md:h-full md:overflow-y-clip no-scrollbar pb-5 md:pb-0">
+      <main className="w-full lg:h-full lg:overflow-y-clip no-scrollbar pb-5 lg:pb-0">
           <header className="flex justify-between">
               <div className="flex items-center gap-3">
                   <Image
@@ -39,7 +39,7 @@ const Page = async () => {
                   />
                   <div className="flex flex-col gap-1">
                       {session && (
-                          <p className="md:text-2xl text-xl font-medium">
+                          <p className="lg:text-2xl text-xl font-medium">
                               Hi, {session.user?.name} &#128075;
                           </p>
                       )}
@@ -47,7 +47,7 @@ const Page = async () => {
                   </div>
               </div>
 
-              <div className="hidden md:flex items-center gap-3">
+              <div className="hidden lg:flex items-center gap-3">
                   <button className="flex items-center gap-1 bg-[#f26e56] p-4 rounded-[2rem]">
                       <Link
                           href="/create/project"
@@ -80,11 +80,11 @@ const Page = async () => {
                   <div className="p-3 rounded-full bg-[#e4ae40]">
                       <GoClock size={30} className="text-[#FFFFFF]"/>
                   </div>
-                  <div className="text-sm block md:hidden">
+                  <div className="text-sm block lg:hidden">
                       <p className="font-medium">Pending</p>
                       <p>10 projects</p>
                   </div>
-                  <div className="hidden md:block">
+                  <div className="hidden lg:block">
                       <p className="text-3xl font-medium">10</p>
                       <p className="text-sm">pending projects</p>
                   </div>
@@ -94,11 +94,11 @@ const Page = async () => {
                   <div className="p-3 rounded-full bg-[#4d84db]">
                       <TfiReload size={30} className="text-[#FFFFFF]"/>
                   </div>
-                  <div className="text-sm block md:hidden">
+                  <div className="text-sm block lg:hidden">
                       <p className="font-medium">Ongoing</p>
                       <p>12 projects</p>
                   </div>
-                  <div className="hidden md:block">
+                  <div className="hidden lg:block">
                       <p className="text-3xl font-medium">12</p>
                       <p>ongoing projects</p>
                   </div>
@@ -108,11 +108,11 @@ const Page = async () => {
                   <div className="p-3 rounded-full bg-[#4aafb0]">
                       <MdTaskAlt size={30} className="text-[#FFFFFF]"/>
                   </div>
-                  <div className="text-sm block md:hidden">
+                  <div className="text-sm block lg:hidden">
                       <p className="font-medium">Completed</p>
                       <p>8 projects</p>
                   </div>
-                  <div className="hidden md:block">
+                  <div className="hidden lg:block">
                       <p className="text-3xl font-medium">8</p>
                       <p>completed projects</p>
                   </div>
@@ -122,11 +122,11 @@ const Page = async () => {
                   <div className="p-3 rounded-full bg-[#da624c]">
                       <TbCancel size={30} className="text-[#FFFFFF]"/>
                   </div>
-                  <div className="text-sm block md:hidden">
+                  <div className="text-sm block lg:hidden">
                       <p className="font-medium">Canceled</p>
                       <p>2 projects</p>
                   </div>
-                  <div className="hidden md:block">
+                  <div className="hidden lg:block">
                       <p className="text-3xl font-medium">2</p>
                       <p>canceled projects</p>
                   </div>
@@ -134,13 +134,13 @@ const Page = async () => {
           </div>
           <p className="mt-10 font-semibold text-2xl">Ongoing Projects</p>
 
-          <div className="mt-5 no-scrollbar md:h-[53.5%] overflow-y-auto">
+          <div className="mt-5 no-scrollbar lg:h-[53.5%] overflow-y-auto">
               <div className="lg:grid grid-cols-3 gap-5 flex flex-col">
                   {ongoingProjects.map((item) => {
                       return (
                           <div
                               key={item.id}
-                              className="p-2 border-2 border-[#a4a4a4] shadow-md shadow-[#010100] rounded-lg flex items-center justify-between"
+                              className="p-2 border-2 border-[#a4a4a4] shadow-lg shadow-[#010100] rounded-lg flex items-center justify-between"
                           >
                               <div className="flex flex-col gap-2">
                                   <Link href={`/projects/${item.id}`} className="font-medium">

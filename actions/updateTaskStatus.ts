@@ -19,7 +19,6 @@ const updateTaskStatus = async (task) => {
             }
         });
         console.log("Task updated:", updatedTask);
-        
     } catch (error) {
         console.log("Error updating task status:", error);
     }

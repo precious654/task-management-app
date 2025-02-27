@@ -5,24 +5,30 @@ import Link from "next/link";
 import Form from "next/form";
 import { IoMdAdd } from "react-icons/io";
 import { IoSearchOutline } from "react-icons/io5";
-import { CiLogout } from "react-icons/ci";
-import tasks from "@/data/tasks.json";
-import ProgressBar from "@/components/ProgressBar";
 import React from "react";
+import getDailyTasks from "@/actions/getDailyTasks";
+import DailyTask from "@/components/DailyTask";
 
 export default async function Home() {
   const session = await auth();
   const today = new Date();
-  const pendingTasks = tasks.filter((task) => task.status === "pending");
-  const ongoingTasks = tasks.filter((task) => task.status === "ongoing");
-  const completedTasks = tasks.filter((task) => task.status === "completed");
+  const { data, error } = await getDailyTasks();
+  if (data) {
+    console.log(data);
+  } else {
+    console.log(error);
+  }
+
+  const pendingTasks = data?.filter((task) => task.status === "pending");
+  const ongoingTasks = data?.filter((task) => task.status === "ongoing");
+  const completedTasks = data?.filter((task) => task.status === "completed");
 
   if (!session) {
     redirect("/auth/signIn");
   }
 
   return (
-    <main className="w-full md:h-full md:overflow-y-clip no-scrollbar pb-5 md:pb-0">
+    <main className="w-full lg:h-full lg:overflow-y-clip no-scrollbar pb-5 lg:pb-0">
       <header className="flex justify-between">
         <div className="flex items-center gap-3">
           <Image
@@ -34,51 +40,59 @@ export default async function Home() {
           />
           <div className="flex flex-col gap-1">
             {session && (
-              <p className="md:text-2xl text-lg font-medium">
+              <p className="lg:text-2xl text-lg font-medium">
                 Hi, {session.user?.name} &#128075;
               </p>
             )}
-            <p className="text-gray-500 text-xs md:text-md">Your daily adventure starts now</p>
+            <p className="text-gray-500 text-xs lg:text-lg">
+              Your daily adventure starts now
+            </p>
           </div>
         </div>
 
-        <div className="md:flex items-center gap-3">
-          <button className="hidden md:flex items-center gap-1 bg-[#f26e56] p-4 rounded-[2rem]">
+        <div className="lg:flex items-center gap-3">
+          <button className="hidden lg:flex items-center gap-1 bg-[#f26e56] p-4 rounded-[2rem]">
             <Link href="/create/task" className="p-1 bg-[#FFFFFF] rounded-full">
-              <IoMdAdd size={20} className="text-[#f26e56]"/>
+              <IoMdAdd size={20} className="text-[#f26e56]" />
             </Link>
-            <Link href="/create/task" className="text-[#FFFFFF] text-sm lg:text-md">
+            <Link
+              href="/create/task"
+              className="text-[#FFFFFF] text-sm lg:text-lg"
+            >
               create task
             </Link>
           </button>
 
-          <Form action="/" className="relative hidden md:block">
+          <Form action="/" className="relative hidden lg:block">
             <input
-                type="text"
-                defaultValue=""
-                name="query"
-                placeholder="Search tasks..."
-                className="p-4 w-full rounded-xl outline-none bg-[#e1e9ef]"
+              type="text"
+              defaultValue=""
+              name="query"
+              placeholder="Search tasks..."
+              className="p-4 w-full rounded-xl outline-none bg-[#e1e9ef]"
             />
             <button className="p-2 bg-[#ecf0f7] rounded-full absolute right-2 top-2">
-              <IoSearchOutline size={20}/>
+              <IoSearchOutline size={20} />
             </button>
           </Form>
 
-          <form action={async () => {
-            "use server";
-            await signOut();
-          }} className="md:hidden">
+          <form
+            action={async () => {
+              "use server";
+              await signOut();
+            }}
+            className="lg:hidden"
+          >
             <button className="p-2 text-[#FFFFFF] bg-[#f26e56] rounded-lg">
               Log out
             </button>
           </form>
         </div>
       </header>
-      <div className="mt-10 flex justify-between md:items-center p-2 rounded-lg md:border-2 border-[#eeeeef]">
-        <div className="flex flex-col gap-1 md:text-sm text-xs">
-          <p className="md:text-lg text-sm font-medium">
-            {today.toLocaleString("en-US", {month: "long" })}
+      <div className="mt-10 flex justify-between lg:items-center p-2 rounded-lg lg:border-2 border-[#eeeeef]">
+        <div className="flex flex-col gap-1 lg:text-sm text-xs">
+          <p className="lg:text-lg text-sm font-medium">
+            {today.toLocaleString("en-US", { month: "long" })}
           </p>
           <p className="text-gray-500 font-medium">
             Today is{" "}
@@ -88,23 +102,26 @@ export default async function Home() {
             </span>
           </p>
         </div>
-        <p className="w-1 hidden md:block rounded-xl h-14 bg-[#eeeeef]"></p>
-        <div className="hidden md:block">
+        <p className="w-1 hidden lg:block rounded-xl h-14 bg-[#eeeeef]"></p>
+        <div className="hidden lg:block">
           <p className="font-medium text-gray-500">Your Daily Tasks</p>
         </div>
-        <p className="w-1 hidden md:block rounded-xl h-14 bg-[#eeeeef]"></p>
-        <div className="hidden md:flex">
-          <Link href="/projects" className="bg-[#f26e56] p-2 rounded-lg text-[#FFFFFF]">
+        <p className="w-1 hidden lg:block rounded-xl h-14 bg-[#eeeeef]"></p>
+        <div className="hidden lg:flex">
+          <Link
+            href="/projects"
+            className="bg-[#f26e56] p-2 rounded-lg text-[#FFFFFF]"
+          >
             View Projects
           </Link>
         </div>
-        <p className="font-medium text-gray-500 text-xs self-end md:hidden">
+        <p className="font-medium text-gray-500 text-xs self-end lg:hidden">
           Your Daily Tasks
         </p>
       </div>
 
-      <div className="md:grid grid-cols-3 gap-5 md:gap-7 flex flex-col md:mt-10 mt-5">
-        <div className="flex flex-col items-center gap-2 md:h-[42%] overflow-auto border-2 border-[#eeeeef] p-3 rounded-lg">
+      <div className="lg:grid grid-cols-3 gap-5 lg:gap-7 flex flex-col lg:mt-10 mt-5 lg:h-full">
+        <div className="flex flex-col items-center gap-2 lg:h-[59%] border-2 border-[#eeeeef] p-3 rounded-lg">
           <p className="font-medium">Pending</p>
           <Link
             href="/create/task"
@@ -112,51 +129,42 @@ export default async function Home() {
           >
             <IoMdAdd size={20} />
           </Link>
-        </div>
-        <div className="flex flex-col items-center gap-2 md:h-[42%] border-2 border-[#eeeeef] p-3 rounded-lg">
-          <p className="font-medium">Ongoing</p>
-          <Link
-            href="/create/task"
-            className="w-full flex justify-center p-2 border-2 border-[#eeeeef] rounded-lg"
-          >
-            <IoMdAdd size={20} />
-          </Link>
-          <div className="flex flex-col gap-5 mt-3 md:overflow-auto no-scrollbar">
-            {ongoingTasks.map((task) => {
-              return (
-                <div
-                  key={task.id}
-                  className="bg-[#fefeff] p-4 rounded-lg flex flex-col gap-3"
-                >
-                  <p className="text-xs text-[#FFFFFF] bg-[#f26e56] p-2 rounded-2xl capitalize self-start">
-                    {task.project.name}
-                  </p>
-                  <p className="font-medium text-lg">{task.title}</p>
-                  <p className="text-sm text-gray-500">{task.description}</p>
-                  <div className="flex flex-col gap-3">
-                    <div className="flex justify-between items-center font-medium">
-                      <p >Project Progress</p>
-                      <p>{task.project.progress}%</p>
-                    </div>
-                    <ProgressBar progress={task.project.progress} />
-                  </div>
-                  <div className="mt-4">
-                    <hr />
-                    <Image src={session.user?.image ?? ""} alt={session.user?.name ?? ""} width={30} height={30} className="mt-2 rounded-full" />
-                  </div>
-                </div>
-              );
-            })}
+          <div className="md:h-[90%] mt-2 overflow-auto no-scrollbar flex flex-col gap-3 w-full">
+            {pendingTasks?.length === 0 ? <p>No pending task</p> :
+                pendingTasks?.map((task) => {
+                  return <DailyTask key={task.id} task={task} />;
+                })}
           </div>
         </div>
-        <div className="flex flex-col items-center gap-2 md:h-[42%] border-2 border-[#eeeeef] p-3 rounded-lg">
+        <div className="flex flex-col items-center gap-2 lg:h-[59%] border-2 border-[#eeeeef] p-3 rounded-lg">
+          <p className="font-medium">Ongoing</p>
+          <Link
+              href="/create/task"
+              className="w-full flex justify-center p-2 border-2 border-[#eeeeef] rounded-lg"
+          >
+            <IoMdAdd size={20}/>
+          </Link>
+          <div className="md:h-[90%] mt-2 overflow-auto no-scrollbar flex flex-col gap-3 w-full">
+            {ongoingTasks?.length === 0 ? <p>No ongoing task</p> :
+                ongoingTasks?.map((task) => {
+                  return <DailyTask key={task.id} task={task}/>;
+                })}
+          </div>
+        </div>
+        <div className="flex flex-col items-center gap-2 lg:h-[59%] border-2 border-[#eeeeef] p-3 rounded-lg">
           <p className="font-medium">Completed</p>
           <Link
-            href="/create/task"
-            className="w-full flex justify-center p-2 border-2 border-[#eeeeef] rounded-lg"
+              href="/create/task"
+              className="w-full flex justify-center p-2 border-2 border-[#eeeeef] rounded-lg"
           >
-            <IoMdAdd size={20} />
+            <IoMdAdd size={20}/>
           </Link>
+          <div className="md:h-[90%] mt-2 overflow-auto no-scrollbar flex flex-col gap-3 w-full">
+            {completedTasks?.length === 0 ? <p>No completed task</p> :
+                completedTasks?.map((task) => {
+                  return <DailyTask key={task.id} task={task}/>;
+                })}
+          </div>
         </div>
       </div>
     </main>
