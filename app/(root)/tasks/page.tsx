@@ -8,14 +8,14 @@ import {IoSearchOutline} from "react-icons/io5";
 import {redirect} from "next/navigation";
 import getTasks from "@/actions/getTasks";
 import Task from "@/components/Task"
+import {toast} from "react-toastify";
 
 const Page = async () => {
     const session = await auth();
     const {data, error} = await getTasks();
-    if(data) {
-        console.log(data);
-    } else {
-        console.log(error)
+
+    if(error) {
+        toast.error(error);
     }
 
     if (!session) {

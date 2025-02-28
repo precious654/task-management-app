@@ -8,15 +8,15 @@ import { IoSearchOutline } from "react-icons/io5";
 import React from "react";
 import getDailyTasks from "@/actions/getDailyTasks";
 import DailyTask from "@/components/DailyTask";
+import {toast} from "react-toastify";
 
 export default async function Home() {
   const session = await auth();
   const today = new Date();
   const { data, error } = await getDailyTasks();
-  if (data) {
-    console.log(data);
-  } else {
-    console.log(error);
+
+  if(error) {
+    toast.error(error);
   }
 
   const pendingTasks = data?.filter((task) => task.status === "pending");
